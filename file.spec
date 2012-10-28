@@ -1,7 +1,7 @@
 Summary:	A utility for determining file types
 Name:		file
 Version:	5.11
-Release:	3
+Release:	4
 License:	distributable
 Group:		Applications/File
 Source0:	ftp://ftp.astron.com/pub/file/%{name}-%{version}.tar.gz
@@ -87,10 +87,6 @@ install -d $RPM_BUILD_ROOT/%{_lib}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv $RPM_BUILD_ROOT%{_libdir}/libmagic.so.* $RPM_BUILD_ROOT/%{_lib}
-ln -sf /%{_lib}/$(basename $RPM_BUILD_ROOT/%{_lib}/libmagic.so.*.*.*) \
-        $RPM_BUILD_ROOT%{_libdir}/libmagic.so
-
 cd python
 %{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT \
@@ -109,8 +105,8 @@ rm -f $RPM_BUILD_ROOT%{_mandir}/file-magic4.diff
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-n libmagic -p /sbin/ldconfig
-%postun	-n libmagic -p /sbin/ldconfig
+%post	-n libmagic -p /usr/sbin/ldconfig
+%postun	-n libmagic -p /usr/sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
@@ -126,8 +122,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libmagic
 %defattr(644,root,root,755)
-%attr(755,root,root) %ghost /%{_lib}/libmagic.so.?
-%attr(755,root,root) /%{_lib}/libmagic.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libmagic.so.?
+%attr(755,root,root) %{_libdir}/libmagic.so.*.*.*
 
 %files -n libmagic-devel
 %defattr(644,root,root,755)
