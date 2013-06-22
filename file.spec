@@ -1,11 +1,11 @@
 Summary:	A utility for determining file types
 Name:		file
-Version:	5.13
+Version:	5.14
 Release:	1
 License:	distributable
 Group:		Applications/File
 Source0:	ftp://ftp.astron.com/pub/file/%{name}-%{version}.tar.gz
-# Source0-md5:	d60c1364ba956eff7d21f8250808fc6d
+# Source0-md5:	c26625f1d6773ad4bc5a87c0e315632c
 Source2:	%{name}-zisofs.magic
 Source3:	%{name}-mscompress.magic
 Source4:	%{name}-magic.mime-gen.awk
@@ -96,8 +96,6 @@ cd ..
 
 awk -f %{SOURCE4} < $RPM_BUILD_ROOT%{_datadir}/misc/magic > $RPM_BUILD_ROOT%{_datadir}/misc/magic.mime
 ln -s misc $RPM_BUILD_ROOT%{_datadir}/file
-
-rm -f $RPM_BUILD_ROOT%{_mandir}/file-magic4.diff
 
 %check
 %{__make} -j1 check
