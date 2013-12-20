@@ -1,11 +1,11 @@
 Summary:	A utility for determining file types
 Name:		file
-Version:	5.15
+Version:	5.16
 Release:	1
 License:	distributable
 Group:		Applications/File
 Source0:	ftp://ftp.astron.com/pub/file/%{name}-%{version}.tar.gz
-# Source0-md5:	3f99565532f548d7540912c4642d1ede
+# Source0-md5:	359c0cf41c3d438d17b4d293f3b950dc
 Source2:	%{name}-zisofs.magic
 Source3:	%{name}-mscompress.magic
 Source4:	%{name}-magic.mime-gen.awk
