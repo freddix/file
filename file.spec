@@ -1,11 +1,11 @@
 Summary:	A utility for determining file types
 Name:		file
-Version:	5.16
+Version:	5.17
 Release:	1
 License:	distributable
 Group:		Applications/File
 Source0:	ftp://ftp.astron.com/pub/file/%{name}-%{version}.tar.gz
-# Source0-md5:	359c0cf41c3d438d17b4d293f3b950dc
+# Source0-md5:	e19c47e069ced7b01ccb4db402cc01d3
 Source2:	%{name}-zisofs.magic
 Source3:	%{name}-mscompress.magic
 Source4:	%{name}-magic.mime-gen.awk
@@ -133,4 +133,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python-magic
 %defattr(644,root,root,755)
 %{py_sitescriptdir}/magic.py[co]
-
+%{py_sitescriptdir}/Magic_file_extensions-*.egg-info
