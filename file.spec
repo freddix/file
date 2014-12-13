@@ -1,12 +1,12 @@
 # based on PLD Linux spec git://git.pld-linux.org/packages/file.git
 Summary:	A utility for determining file types
 Name:		file
-Version:	5.20
+Version:	5.21
 Release:	1
 License:	distributable
 Group:		Applications/File
 Source0:	ftp://ftp.astron.com/pub/file/%{name}-%{version}.tar.gz
-# Source0-md5:	5d5e13eb3e0e13839da869a31790faf2
+# Source0-md5:	549fe96e09041eabece9de2bb28ef923
 Source2:	%{name}-zisofs.magic
 Source3:	%{name}-mscompress.magic
 Source4:	%{name}-magic.mime-gen.awk
